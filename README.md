@@ -26,20 +26,17 @@ This will create a local .env and setup pip and install dependencies.
 usage
 ---
 
-Use the various ``make serve`` commands to run jupyter.
-These will serve the notebooks on your browser, allowing you to create, edit and delete your notebooks locally.
+The ``notebooks`` directory is ignored, which allows you to store your actual notebook files in a separate Git repo.
+To add your notebooks simply clone them into the ``notebooks`` directory eg.
+```bash
+git clone https://github.com/YOUR_GIT_USERNAME/YOUR_NOTEBOOKS_REPO notebooks
+``` 
 
+Once you have a ``notebooks`` directory, or have cloned your notebooks repo into the ``notebooks`` directory,
+you can run Jupyter with:
+ 
 ```bash
 make serve
 ```
-serve your notebooks
 
-```bash
-make servelc
-```
-serve your local (git ignored) notebooks. 
-
-```bash
-make serverf
-```
-serve the default (reference) notebooks that come with [gibiansky/IHaskell](https://github.com/gibiansky/IHaskell).
+This will serve the notebooks in your browser, allowing you to create, edit and delete your notebooks locally.

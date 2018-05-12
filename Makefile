@@ -9,8 +9,6 @@ COMMA := ,
 
 REQUIREMENTS_FILE := requirements
 NOTEBOOKS_DIR := notebooks
-NOTEBOOKS_LOCAL_DIR := notebooks_local
-NOTEBOOKS_REFERENCE_DIR := notebooks_reference
 
 #------------------------------
 # help
@@ -29,8 +27,6 @@ help:
 	@$(call print_space)
 	@$(call print_h2,"notebooks")
 	@$(call print_options,"serve","Serve notebooks in browser")
-	@$(call print_options,"servesb","Serve local (git ignored) notebooks in browser")
-	@$(call print_options,"serverf","Serve reference notebooks notebooks in browser")
 
 #------------------------------
 # initialization
@@ -84,13 +80,3 @@ pipinstall:
 serve:
 	@$(call print_h2,"serving notebooks")
 	@stack exec jupyter -- notebook --notebook-dir=$(NOTEBOOKS_DIR)
-
-.PHONY: servelc
-servelc:
-	@$(call print_h2,"serving local (git ignored) notebooks")
-	@stack exec jupyter -- notebook --notebook-dir=$(NOTEBOOKS_LOCAL_DIR)
-
-.PHONY: serverf
-serverf:
-	@$(call print_h2,"serving reference notebooks")
-	@stack exec jupyter -- notebook --notebook-dir=$(NOTEBOOKS_REFERENCE_DIR)
