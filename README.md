@@ -25,7 +25,8 @@ This will create a local .env and setup pip and install dependencies.
 
 ##### 3. notebooks directory
 
-The ``notebooks`` directory is ignored, which allows you to store your actual notebook files in a separate Git repo.
+The ``notebooks`` directory is ignored, 
+which allows you to store your actual notebook files in a separate Git repo.
 To add your notebooks either:
 
 create a ``notebooks`` directory:
@@ -46,11 +47,32 @@ https://github.com/neilrussell6/jupyter-notebooks-boilerplate
 usage
 ---
 
-Once you have a ``notebooks`` directory, or have cloned your notebooks repo into the ``notebooks`` directory,
+Once you have a ``notebooks`` directory, 
+or have cloned your notebooks repo into the ``notebooks`` directory,
 you can run Jupyter with:
 
 ```bash
 make serve
 ```
 
-This will serve the notebooks in your browser, allowing you to create, edit and delete your notebooks locally.
+This will serve the notebooks in your browser, 
+allowing you to create, edit and delete your notebooks locally.
+
+notebook specific dependencies
+---
+
+You can install dependencies for you Python 3 notebooks 
+by adding a ``requirements.in`` file to your ``notebooks`` directory,
+and running:
+```bash
+make pipcompile
+make pipinstall
+``` 
+And add the root ``requirements.txt`` as a dependency
+to your ``notebooks/requirements.in``, like this:
+```Make
+-r ../requirements.txt
+```
+
+This way when you run ``make init`` or ``make pipcompile`` and ``make pipinstall``,
+it will install both the root dependencies and those in your ``notebooks/requirements.in``).

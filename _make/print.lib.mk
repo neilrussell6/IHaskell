@@ -63,5 +63,5 @@ define print_options
 endef
 
 define print_warning
-	@printf '\n%b %s %b\n' $(call FGB,$(GOLD)) $(1) $(RESET)
+	@printf '%b %s %b\n' $(call FGB,$(GOLD)) $(1) $(RESET)
 endef
