@@ -19,7 +19,7 @@ help:
 	@$(call print_h1,"AVAILABLE","OPTIONS")
 	@$(call print_space)
 	@$(call print_h2,"initialization")
-	@$(call print_options,"init","initialize project: create local env, install requirements, ihaskell etc.")
+	@$(call print_options,"init","initialize project: create local env and install requirements etc.")
 	@$(call print_space)
 	@$(call print_h2,"dependency")
 	@$(call print_options,"pipcompile","Compile requirements")
