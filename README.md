@@ -40,7 +40,7 @@ git clone https://github.com/YOUR_GIT_USERNAME/YOUR_NOTEBOOKS_REPO notebooks
 
 or clone this boilerplate notebooks repo:
 ```bash
-https://github.com/neilrussell6/notebooks-boilerplate
+https://github.com/neilrussell6/jupyter-notebooks-boilerplate
 ```
 
 usage
